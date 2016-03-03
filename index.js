@@ -26,7 +26,7 @@ exports.run = function (argv, cli, env) {
     builtinTpl.init();
     exports.commands = getTplSubCommands(builtinTpl.getBuilitinTplTypes());
 
-    if (argv.h || argv.help) {
+    if ((argv._.length === 1 && argv._[0] === 'init')  || argv.h || argv.help) {
         return cli.help(exports.name, exports.options, exports.commands);
     }
 
